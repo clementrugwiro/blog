@@ -168,10 +168,13 @@ h2{
     display: flex;
     width: 80%;
     margin: auto;
+    margin-bottom: 100px;
 }
 .con-form p{
     margin-bottom: 60px;
 }
+
+h
 .contact li{
     display: inline;
     border-left: 1px solid rgb(58, 205, 196);
@@ -215,3 +218,117 @@ h2{
     color: rgb(58, 205, 196);
     font-size: 17px;
 }
+
+.headerName a{
+    text-decoration: none;
+}
+
+/* login-page */
+
+.log-container{
+    width: 100%;
+    height: 100%;
+}
+.log-cont{
+    margin: auto;
+    width: 30%;
+    height: 440px;
+    margin-top: 40px;
+    margin-bottom: 50px;
+    padding-top: 5px;
+    background-color: rgb(23, 20, 38);
+    border-radius: 30px;
+}
+.profile img{
+    width:150px;
+    border-radius: 50%;
+    margin: auto;
+}
+#wel{
+    text-align: center;
+}
+.profile{
+    margin: auto;
+    width: 150px;
+}
+.inputs{
+width: 300px;
+margin: auto;
+}
+.log-cont input{
+    background-color: white;
+    color: black;
+    width: 300px;
+    height: 35px;
+    margin-top: 25px;
+    font-size: 18px;
+    border-radius: 15px;
+    border: none;
+    padding-left: 8px;
+}
+#log-btn{
+    background-color: rgb(58, 205,196);
+    color: black;
+    width: 150px;
+    margin-left: 25%;
+    border-radius: 20px;
+    border: none;
+    padding: 0;
+}
+/* admin-page */
+
+.main-con{
+    width: 90%;
+    margin: auto;
+    background-color: rgb(255, 242, 242);
+    height: 1800px;
+}
+.part1{
+    width: 98%;
+    margin: auto;
+    background-color: red;
+    height: 300px;
+    padding: 10px;
+    display: flex;
+}
+.part11{
+    background-color: blue;
+    width: 40%;
+}
+.part12{
+    background-color: green;
+    width: 60%;
+    display: flex;
+}
+.part2{
+    width: 98%;
+    margin: auto;
+    background-color: rgb(133, 226, 26);
+    height: 300px;
+    padding: 10px;
+    display: flex;
+}
+.part21{
+    background-color: rgb(79, 20, 187);
+    width: 50%;
+}
+.part22{
+    background-color: rgb(192, 37, 122);
+    width: 50%;
+}
+
+.part11 img{
+    width: 100px;
+    
+}
+.part12 h3{
+    margin-top: 3px;
+    margin-bottom: 5px;
+    margin-left: 50px;
+}
+.part12 input{
+    margin-top: 3px;
+    margin-bottom: 25px;
+    margin-left: 50px;
+}
+
