@@ -5,11 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lovers+Quarrel&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
+
     <title>portfolio</title>
 </head>
 <body>
     <div class="header">
-        <div class="headerName" > <a href="./login.html"><h1>Clement rugwiro</h1></a></div>
+        <div class="headerName" > <a href="./login.html"><h1>Clement Rugwiro</h1></a></div>
         <div class="headerBtn">
             <ul>
                 <li><a href="../index.html"><input type="button" id="btn" value="HOME"></a> </li>
@@ -26,13 +31,14 @@
 
             <form action="">
                 <h3>NAME</h3>
-                <input type="text" name="name" id="con-name">
+                <input type="text" name="name" id="con-name"required>
                 <h3>YOUR EMAIL</h3>
-                <input type="text" name="email" id="con-email">
+                <input type="email" name="email" id="con-email"required>
                 <h3>SUBJECT</h3>
-                <input type="email" name="subject" id="con-subject">
+                <input type="text" name="subject" id="con-subject"required>
                 <h3>YOUR MESSAGE</h3>
-                <input type="text" name="message" id="con-msg">
+                <input type="text" name="message" id="con-msg"required><br>
+                <input id="send-btn"  type="submit" value="SEND">
             </form>
         </div>
         <div class="con-info">
