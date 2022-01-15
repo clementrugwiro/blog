@@ -15,6 +15,10 @@ body,html{
 .headerName{
     width: 40%;
 }
+#nav-ico{
+    width: 30px;
+    display: none;
+}
 
 .header li{
 display: inline;
@@ -362,10 +366,12 @@ margin-left: 24%;
     margin: auto;
 }
 .part1{
+    color: rgb(255, 242, 242);
     width: 98%;
     margin: auto;
     padding: 10px;
     display: flex;
+    border-bottom: 1px solid rgb(255, 242, 242);
 }
 .part11{
 
@@ -374,23 +380,23 @@ margin-left: 24%;
     
 }
 .part12{
-    background-color: green;
     width: 100%;
     display: flex;
 }
 .part2{
     width: 98%;
     margin: auto;
-    background-color: rgb(133, 226, 26);
     padding: 10px;
     display: flex;
+    color: rgb(255, 242, 242);
 }
 .part21{
-    background-color: rgb(79, 20, 187);
     width: 50%;
 }
+.part21 img{
+    width:400px;
+}
 .part22{
-    background-color: rgb(192, 37, 122);
     width: 50%;
 }
 
@@ -414,7 +420,7 @@ margin-left: 24%;
 }
 .part12 h3{
     margin-top: 3px;
-    margin-bottom: 5px;
+    margin-bottom: 3px;
     margin-left: 50px;
 }
 .part12 input{
@@ -422,6 +428,9 @@ margin-left: 24%;
     margin-bottom: 25px;
     margin-left: 50px;
 
+}
+.part12 img{
+    margin-left: 70px;
 }
 #link-ico{
     height: 50px;
@@ -439,6 +448,9 @@ h3{
     font-family: 'Cinzel', serif;
     /* font-size: 35px; */
 }
+h6{
+    font-family: 'Cinzel', serif;  
+}
 #hello{
     font-family: 'Cinzel', serif;
 }
@@ -453,6 +465,17 @@ h2{
     margin-left: 20px;
     text-decoration:underline wavy;
 }
+#icon-btn{
+    width: 20px;
+}
+.exp-item{
+    display: flex;
+}
+#p211{
+    width: 400px;
+}
+/* responsiveness */
+
 @media only screen and (max-width:1200px){
 
     #box1::after {
@@ -517,9 +540,15 @@ h2{
         margin-top: 80px;
     }
 }
-@media only screen and (max-width:393px){
+@media only screen and (max-width:413px){
     h1{
         font-size: 18px;
+    }
+    #btn{
+        display: none;
+    }
+    #nav-ico{
+        display: inline;
     }
     .footer{
         display: inline;
@@ -535,11 +564,50 @@ h2{
     .con-form{
         padding: 10px;
     }
+    .log-cont{
+        width: 80%;
+    }
+    .log-container{
+        margin-bottom: 200px;
+    }
     .con-form input{
         width: 300px;
         border-radius: 5px;
         height: 25px;
     } 
+    .main{
+        display: inline;
+        height: fit-content;
+    }
+    .intro{
+        margin: auto;
+        margin-top: -120px;
+        width: 80%;
+        
+    }
+    .imagexp{
+        width: 80%;
+        margin: auto;
+        margin-top: 20px;
+        display: inline;
+    }
+    .imagexp img{
+        width: 250px;
+        height: 320px;
+        margin-top: 0px;
+    }
+    #main-img{
+        margin: auto;
+        width: 60%;
+        padding-left: 0;
+    }
+    #experience{
+        position: relative;
+        margin-top: 30px;
+        margin: auto;
+        width: 40%;
+        height: 120px;
+    }
     .contact{
         display: inline;
     }
