@@ -1,12 +1,12 @@
 body,html{
-    background-color: rgb(4, 1, 20);
+    background-color: rgb(193,204,214);
     margin: 0;
     padding: 0;
 }
 
 .header{
     height: 60px;
-    background-color: rgb(23, 20, 37);
+    background-color: rgb(78,83,87);
     display: flex;
     position: sticky;
     top: 0;
@@ -22,26 +22,34 @@ body,html{
 
 .header li{
 display: inline;
-margin-left: 140px;
+margin-left: 60px;
 }
 
 
+
 #btn{
-    color: rgb(255, 242, 242);
+    color: rgb(241, 236, 254);
     font-size: 19px;
     font-weight: bold;
     background-color: transparent;
     border: none;
 }
 #btn:hover{
-    border-bottom: 2px solid rgb(255, 242, 242);
+    border-bottom: 2px solid rgb(251, 216, 127);
     cursor: pointer;
 }
+
+#logout{
+     color:rgb(251, 216, 127);
+     font-size: 19px;
+     font-weight: bold;
+     background-color: transparent;
+     border: none;
+}
 .main{
-    color: rgb(255, 242, 242);
+    color: black;
     display: flex;
     margin-top: -30px;
-    height: 550px;
 }
 .imagexp img{
     width: 236px;
@@ -55,10 +63,13 @@ margin-left: 140px;
     
 }
 h1{
-    color: rgb(255, 242, 242);  
+    color: rgb(193,204,214);  
     margin: auto;
     margin-top: 1%;
     margin-left: 5%;
+}
+#clec{
+    color:rgb(251, 216, 127)
 }
 #main-img{
     padding-left: 130px;
@@ -79,7 +90,7 @@ font-size: 26px;
 .box {
     margin-top: -40px;
     font-size: 2em;
-    color: rgb(255, 242, 242);
+    color: black;
     font-weight: 900;
 }
   
@@ -87,7 +98,7 @@ font-size: 26px;
     content: "am a software developer";
     display: flex;
     transform: rotateX(180deg);
-    color: #ddd;
+    color: black;
     text-align: center;
     margin-left: 272px;
     opacity:0.2;
@@ -103,22 +114,23 @@ font-size: 26px;
 #num{
     font-size: 50px;
     margin-top: 13px;
-    color: rgb(58, 205, 196);
+    color: rgb(78,83,87);
 }
 .xp{
     text-align: start;
     width: fit-content;
-    color: rgb(58, 205, 196);
+    color: rgb(78,83,87);
    
 }
 .footer{
-    bottom: 0;
 display: flex;
-background-color: rgb(23, 20, 37);
+background-color: rgb(78,83,87);
+margin-top: 15px;
 }
 #foot{
     font-size: 20px;
-    color: rgb(58, 205, 196);
+    font-weight: 600;
+    color: rgb(251, 216, 127);
     margin-top: 20px;
     margin-bottom: 10px;
     margin-left: 10px;
@@ -135,23 +147,23 @@ background-color: rgb(23, 20, 37);
 }
 #who{
     display: flex;
-    border-bottom: 2px solid white;
+    border-bottom: 2px solid black;
 }
 #ques{
-    color: rgb(62, 95, 109);
+    color: rgb(101, 107, 112);
     width: 35%;
     text-align:right;
     padding-right: 50px;
 }
 #ans{
-    color: rgb(255,242,242);
+    color: black;
 }
 li{
-    color: rgb(255, 242, 242);
+    color: black;
     font-size: 20px;
 }
 #aboutpic{
-    border: 2px solid rgb(255,242,242);
+    border: 2px solid black;
 }
 #aboutpic img{
  height: 300px;
@@ -161,7 +173,7 @@ li{
     display: flex; margin-top: 40px;
 }
 p{
-    color: rgb(255, 242, 242);
+    color: black;
     font-size: 23px;
     margin-bottom: 80px;
 }
@@ -190,11 +202,11 @@ p{
 #personal{
     display: flex;
     margin-top: 60px;
-    border-top: 0.5px solid rgb(46, 45, 44);
+    border-top: 0.5px solid black;
     padding-top: 30px;
 }
 #exper ul li{
-    background-color: rgb(23, 20, 37);
+    background-color: rgb(227,241,252);
     margin-bottom: 5px;
     height: 30px;
     width: 300px;
@@ -213,7 +225,7 @@ p{
     width: 300px;
 }
 h2{
-    color: rgb(255, 242, 242);
+    color: black;
 }
 
 #icon{
@@ -236,10 +248,27 @@ h2{
     margin-bottom: 60px;
 }
 
-h
+
+#inputcontrol.success input{
+    border-color: #09c372;
+}
+#inputcontrol.error input{
+    border-color: #ff3860;
+}
+#inputcontrol.success textarea{
+    border-color: #09c372;
+}
+#inputcontrol.error textarea{
+    border-color: #ff3860;
+}
+#inputcontrol .error{
+    color: #ff3860;
+    font-size: 12px;
+    /* height: 13px; */
+}
 .contact li{
     display: inline;
-    border-left: 1px solid rgb(58, 205, 196);
+    border-left: 1px solid black;
     font-size: 20px;
     margin-left: 5px;
     
@@ -250,14 +279,14 @@ h
 }
 .contact a{
     text-decoration: none;
-    color: rgb(58, 205, 196);
+    color: black;
 }
 .con-form{
     width: 60%;
 }
 
 .con-form h3{
-    color: rgb(255, 242, 242);
+    color: black;
     margin-bottom: 10px;
 }
 .con-form input{
@@ -266,18 +295,18 @@ h
     height: 25px;
 }
 #con-msg{
-    height: 100px;
+    border-radius: 5px;
 }
 .con-info{
     padding: 50px;
 }
 .con-info h3{
-    color: rgb(255, 242, 242);
+    color: black;
     margin-bottom: 5px;
 }
 .con-info h5{
     margin-top: 5px;
-    color: rgb(58, 205, 196);
+    color: black;
     font-size: 17px;
 }
 
@@ -298,12 +327,27 @@ h
     margin-top: 40px;
     margin-bottom: 50px;
     padding-top: 5px;
-    background-color: rgb(23, 20, 38);
+    background-color: rgb(241, 236, 254);
     border-radius: 30px;
+}
+.reg-cont{
+    margin: auto;
+    width: 30%;
+    height: 540px;
+    margin-top: 40px;
+    margin-bottom: 50px;
+    padding-top: 5px;
+    background-color: rgb(227, 216, 253);
+    border-radius: 30px;
+}
+#reg{
+    margin: auto;
+    ;
+    text-align: center;
 }
 .profile img{
     width:150px;
-    border-radius: 50%;
+    border-radius: 30%;
     margin: auto;
 }
 #wel{
@@ -325,11 +369,22 @@ margin: auto;
     margin-top: 25px;
     font-size: 18px;
     border-radius: 15px;
-    border: none;
+    border: 1px solid rgb(255,242,242);
+    padding-left: 8px;
+}
+.reg-cont input{
+    background-color: rgb(255,242,242);
+    color: black;
+    width: 300px;
+    height: 35px;
+    margin-top: 25px;
+    font-size: 18px;
+    border-radius: 15px;
+    border: 1px solid rgb(255,242,242);
     padding-left: 8px;
 }
 #log-btn{
-    background-color: rgb(58, 205,196);
+    background-image: linear-gradient(to right, rgb(78,83,87) , rgba(193,204,214));
     color: black;
     width: 150px;
     margin-left: 25%;
@@ -344,7 +399,7 @@ width: 155px;
 margin-left: 24%;
 }
 #send-btn{
-    background-color: rgb(58, 205,196);
+    background-color: rgb(78,83,87);
     color: black;
     width: 200px;
     font-size: 18px;
@@ -362,42 +417,52 @@ margin-left: 24%;
 /* admin-page */
 
 .main-con{
-    width: 90%;
+    width: 100%;
     margin: auto;
 }
 .part1{
-    color: rgb(255, 242, 242);
-    width: 98%;
+    color: black;
+    width: 100%;
     margin: auto;
     padding: 10px;
     display: flex;
-    border-bottom: 1px solid rgb(255, 242, 242);
+    border-bottom: 1px solid black;
+}
+#pers-form{
+    display: flex;
+    margin: auto;
 }
 .part11{
 
-    width: 40%;
+    width: 25%;
     padding-top: 23px;
+    margin-right: 100px;
     
 }
 .part12{
-    width: 100%;
     display: flex;
+    margin-top: 40px;
 }
 .part2{
     width: 98%;
     margin: auto;
     padding: 10px;
     display: flex;
-    color: rgb(255, 242, 242);
+    color: black;
 }
 .part21{
     width: 50%;
+    border-right: 1px solid black;
 }
 .part21 img{
     width:400px;
 }
+.part21 h3{
+    margin-bottom: 2px;
+}
 .part22{
     width: 50%;
+    padding-left: 50px;
 }
 
 .part11 img{
@@ -407,11 +472,16 @@ margin-left: 24%;
     
 }
 #edt-img{
-    border: none;
-    color: rgb(255, 242, 242);
+    border: 1px solid wheat;
+    color: black;
     background-color: transparent;
     float: left;
     margin-left: 50px;
+}
+#edt-img:hover{
+    border:none;
+    background-color: yellowgreen;
+    cursor: pointer;
 }
 .part11 input{
     margin-bottom: 40px;
@@ -474,6 +544,86 @@ h2{
 #p211{
     width: 400px;
 }
+
+/* blog-page */
+.dash-container{
+    margin: 0;
+    margin-top: -20px;
+    margin-bottom: -20px;
+    padding: 0;
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+   
+    
+}
+#blog-p{
+    font-size: 23px;
+    font-weight: 500;
+}
+#a-title{
+    width: 500px;
+    height: 25px;
+    border-radius: 10px;
+    margin-top: -80px;
+}
+#article{
+    width: 500px;
+    height: 60px;
+    border-radius: 20px;
+    text-align: start;
+    text-overflow:ellipsis;
+}
+.dash1{
+    margin: 20px;
+    margin-top: 40px;
+    width: 600px;
+    border-radius: 40px;
+    background-color: rgb(193,204,214);
+    height: 380px;
+    padding-top: 20px;
+    padding-left: 10px;
+    box-shadow: 1px 2px 1px 2px black;
+}
+.dash1 p{
+    font-size: 21px;
+}
+#cmtsct img{
+    width: 20px;
+    
+}
+#cmtsct p{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+#cmtsct{
+    display: flex;
+}
+#rect{
+    text-align: center;
+    padding: auto;
+    margin-left: 30px;
+    height: 40px;
+}
+#cmtsct img:hover{
+    width: 24px;
+}
+#update-btn{
+    width: 200px;
+    height: 30px;
+    border-radius: 10px;
+    margin-top: 80px;
+    margin-bottom: 50px;
+    border: 1px solid black;
+    background-color: rgb(101, 107, 112);
+}
+#update-btn:hover{
+    background-color: yellowgreen;
+}
+#rect-p{
+    font-size: 20px;
+}
+
 /* responsiveness */
 
 @media only screen and (max-width:1200px){
@@ -509,6 +659,10 @@ h2{
     #main-img{
         padding-left: 60px;
     } 
+    .part21 img{
+        width: 300px;
+    }
+
 }
 
 @media only screen and (max-width:877px){
@@ -524,7 +678,7 @@ h2{
     }
     
     #exper ul li{
-        background-color: rgb(23, 20, 37);
+        background-color: rgb(227,241,252);
         margin-bottom: 5px;
         height: 30px;
         width: 200px;
@@ -539,6 +693,20 @@ h2{
         border-radius: 69px;
         margin-top: 80px;
     }
+    .part12 h3{
+        font-size: 15px;
+    }
+    .part12 input{
+       margin-bottom: 20px; 
+    }
+    #link-ico{  
+        width: 30px;
+        height: 30px;
+    }
+    .part11 input{
+        margin-bottom: 20px;
+        margin-top: 5px;
+    }
 }
 @media only screen and (max-width:413px){
     h1{
@@ -549,11 +717,17 @@ h2{
     }
     #nav-ico{
         display: inline;
+        margin-left:-5px;
+
     }
     .footer{
         display: inline;
         margin: auto;
-    } 
+    }
+    .inputs input{
+        width: 250px;
+        margin-left: 20px;
+    }
     .footer li{
         margin-left: 10px;
         margin-right: 10px;
@@ -643,4 +817,21 @@ h2{
         height: 300px;
         width: 380px;
        }
+       /* .part1{
+           display: inline;
+       }
+       .part2{
+           display: inline;
+       } */
+       .part11{
+           width: 80%;
+           margin: auto;
+       }
+       .part12{
+        width: 100%;
+        padding: 0;
+    }
+    .part12 h3{
+        margin-left: 0;
+    }
 }
