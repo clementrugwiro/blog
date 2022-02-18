@@ -1,138 +1,14 @@
 
 
 
-function createart(){
-    alert("here you are");
-    let ARTICLEform =  JSON.parse(localStorage.getItem('ARTICLEform')) || [];
-    ARTICLEform.push(
-        {
-             A_title : document.getElementById("a-title").value,
-             A_txt : document.getElementById("article").value,
-             A_likes: 0,
-             A_dislikes:0,
-             
-            })
-    localStorage.setItem("ARTICLEform",JSON.stringify(ARTICLEform))
 
-    console.log(localStorage.getItem("ARTICLEform"))
-    document.querySelector("form").reset();
-    
-}
-function displayart(){
-    console.log(localStorage.getItem("ARTICLEform"))
-if(localStorage.getItem("ARTICLEform")){
-let output = document.getElementById("dash-cont");
-output.innerhtml ="";
-JSON.parse(localStorage.getItem('ARTICLEform')).forEach(element => {
-    output.innerHTML+=`
-    <div style="width:500px;">
-    <div><h3>${element.A_title  }</h3></div>
-    <div><p id="blog-p">${element.A_txt}></p></div>
-    <div><div></div><div></div></div>
-    <div style="float: right;padding-right: 20px;">
-        <input type="button" id="send-btn" value="delete">
-    </div>
-    </div>
-    `
-});
-
-    };
-
-}
-function displayartUser(){
-    console.log("in here!!")
-    console.log(localStorage.getItem("ARTICLEform"))
-if(localStorage.getItem("ARTICLEform")){
-let output = document.getElementById("dash-cont");
-output.innerhtml ="";
-JSON.parse(localStorage.getItem('ARTICLEform')).forEach(element => {
-    output.innerHTML+=`
-    <div style="width:500px;">
-    <div><h3>${element.A_title  }</h3></div>
-    <div><p id="blog-p">${element.A_txt}></p></div>
-    <div id="cmtsct"><div id="rect"><p id="rect-p"><button onclick="liked()" id="likebtn" value="${element}"><img src="../images/like.png" alt=""></button>${element.A_likes}</p></div><div id="rect"><p id="rect-p"><button><img src="../images/dislike.png" alt=""></button>${element.A_dislikes}</p></div><div id="rect"><p id="rect-p"><button><img src="../images/chat.png" alt=""></button>50</p></div></div>
-    </div>
-    `
-    console.log(element)
-});
-
-    };
-
-}
-
-const liked = () =>{
-    console.log("you liked it",document.querySelector('#likebtn').value)
-}
-
-const register = () =>{
-    alert("you registered!!");
-    let registerData =  JSON.parse(localStorage.getItem('registerData')) || [];
-    registerData.push({
-        id : registerData.length || localStorage.length,
-        f_name: fnamevalue,
-        l_name: lnamevalue,
-        U_name: Unamevalue,
-        u_email: uemailvalue,
-        u_pwd: upwdvalue,
-    })
-    localStorage.setItem('registerData',JSON.stringify(registerData));
-    console.log(localStorage)
-
-    
-}
-
-
-function storelocal(){
-    console.log("in here!!")
-    // let contactform = {
-    //  name : document.getElementById("con-name").value,
-    //  email : document.getElementById("con-email").value,
-    //  subject : document.getElementById("con-subject").value,
-    //  msg : document.getElementById("con-msg").value,
-    // }
-
-    let contactform =  JSON.parse(localStorage.getItem('contactform')) || [];
-    contactform.push(
-        {
-             name : document.getElementById("con-name").value,
-             email : document.getElementById("con-email").value,
-             subject : document.getElementById("con-subject").value,
-             msg : document.getElementById("con-msg").value,
-            })
-    localStorage.setItem("contactform",JSON.stringify(contactform))
-
-    console.log(localStorage.getItem("contactform"))
-    document.querySelector("form").reset();
-
-}
-
-function displaymsg(){
-    console.log(localStorage.getItem("contactform"))
-if(localStorage.getItem("contactform")){
-let output = document.getElementById("inbox-box");
-output.innerhtml ="";
-JSON.parse(localStorage.getItem('contactform')).forEach(element => {
-    output.innerHTML+=`
-   <div  style=" border-bottom: 1px solid rgb(255, 242, 242);overflow:hidden;margin-top:50px">
-        <h3 >${element.name}</h3>
-        <h4 style=" " >${element.email}</h4>
-        <h5>${element.subject}</h5>
-        <p stle="white-space:pre-line ">${element.msg}</p> 
-    </div>
-    `
-});
-
-    };
-
-}
-
-let form =document.getElementById("form");
+let form = document.getElementById("form");
 let Aname = document.getElementById("con-name");
 let email = document.getElementById("con-email");
 let subject = document.getElementById("con-subject");
 let msg = document.getElementById("con-msg");
 let form1 =document.getElementById("login-form")
-let namelogin = document.getElementById("name-login");
+let emaillogin = document.getElementById("email-login");
 let pwdlogin = document.getElementById("pwd-login");
 let form2 = document.getElementById("form-art");
 let Atitle= document.getElementById("a-title");
@@ -150,9 +26,14 @@ let fname =document.getElementById("fname");
 let lname =document.getElementById("lname");
 let Uname = document.getElementById("Uname");
 let uemail = document.getElementById("U-email");
+let fcmt = document.getElementById("fcmt");
+let txtcmt = document.getElementById("commenttxt");
+
+
 let upwd = document.getElementById("upwd");
 let repwd = document.getElementById("re-pwd");
 let currentuser ;
+
 
 
 
@@ -217,19 +98,12 @@ let validaterform =() =>{
         
     }
     if(check4===true){
-        register();
-        location.reload();
+        console.log("checked everything")
+        register(fnamevalue,lnamevalue,Unamevalue,uemailvalue,upwdvalue);
+        // location.reload();
     }
 
 }
-
-
-
-
-
-
-
-
 
 const validatepform = ()=>{
     let check3 = true;
@@ -304,7 +178,6 @@ const validatepform = ()=>{
     }
 }
 
-
 const validateaform =() =>{
     let check2 = true;
     let Atitlevalue = Atitle.value.trim();
@@ -338,18 +211,17 @@ const validateaform =() =>{
 
 }
 
-
  const validatelform = () =>{
     let check1 =true;
-    let nameloginvalue = namelogin.value.trim();
+    let emailloginvalue = emaillogin.value.trim();
     let pwdloginvalue = pwdlogin.value.trim();
 
-    if(nameloginvalue===""){
-        setError(namelogin,"names are required");
+    if(emailloginvalue===""){
+        setError(emaillogin,"names are required");
         check1=false
     }
     else{
-        setsucces(namelogin);
+        setsucces(emaillogin);
     }
     if(pwdloginvalue===""){
         setError(pwdlogin,"password are required");
@@ -360,47 +232,33 @@ const validateaform =() =>{
         
     }
     if(check1===true){
-     login();  
+     login(emailloginvalue,pwdloginvalue);
     }
 
 
  }
 
- const login=()=>{
-     let check=false;
-    JSON.parse(localStorage.getItem('registerData')).forEach(element =>{
-        if(element.U_name===namelogin.value){
-            check=true;
-            if(element.u_pwd===pwdlogin.value){
-                alert("you are logged in")
-                window.location.href="../index.html"   
-                 currentuser = element;   
-               localStorage.setItem('name',currentuser.U_name);
-               localStorage.setItem('email',currentuser.u_email);
-               
-            }
-            else{
-                setError(pwdlogin,"wrong password")
-            }
-        }
-        
-    if(check==false){
-        setError(namelogin,"wrong username")
-        setError(pwdlogin,"")
+const validatefcmt =() =>{
+    let check1 =true;
+    let cmtvalue = txtcmt.value.trim()
+    let cmtbtnvalue = document.getElementById("sendcmt").value.trim()
+    
+    if(cmtvalue===""){
+        setError(txtcmt,"comment is required");
+        check1=false
     }
-    });
+    else{
+        setsucces(txtcmt);
+    }
+    if(check1===true){
+        console.log(cmtvalue,cmtbtnvalue);
+       }
 }
 
-const logout = () =>{
-    localStorage.removeItem('name')
-    localStorage.removeItem('email')
-    window.location.href="../index.html"  
-}
 
+const checklogg = () =>{
 
-checklogg = () =>{
-    console.log("hellooooooooooooooo",);
-        if(localStorage.getItem('name')){
+        if(localStorage.getItem('id')){
             document.querySelector('.login').style.display = 'none'; 
             document.querySelector('.logout').style.display = 'inline'; 
         }
@@ -411,7 +269,13 @@ checklogg = () =>{
 }
 
 
-
+if(document.querySelector("fcmt")!=null){
+    document.querySelector("fcmt").addEventListener('submit', e =>{
+        e.preventDefault();
+        validatefcmt();
+        console.log("you got here.")
+    })
+}
 
 if(form!=null){
 form.addEventListener('submit', e =>{
@@ -511,7 +375,175 @@ const validateform = () =>{
         check=true;
     }
     if(check===true){
-        storelocal();
-        location.reload();
+        sendmsg(namevalue,emailvalue,subjectvalue,msgvalue)
+        
     }
 }
+
+
+// register api fetch
+
+async function register(fnamevalue,lnamevalue,Unamevalue,uemailvalue,upwdvalue){ 
+ fetch("http://blog-portfolio-apis.herokuapp.com/api/add-users", {
+         method:"POST",
+         body:JSON.stringify({
+         firstname: fnamevalue,
+         lastname: lnamevalue,
+         username: Unamevalue,
+         email:uemailvalue,
+         pwd: upwdvalue,
+           }),
+             headers:{
+               "content-type":"application/json; charset=UTF-8" 
+         }
+      })
+     .then(response=>response.json())
+     .then(json=>{
+         console.log(json)
+         window.location.href="../login.html"
+        })
+ }
+
+ // login api fetch
+ async function login(emailloginvalue,pwdloginvalue){
+ fetch("http://blog-portfolio-apis.herokuapp.com/api/login", {
+         method:"POST",
+         body:JSON.stringify({
+         email:emailloginvalue,
+         pwd: pwdloginvalue,
+           }),
+             headers:{
+               "content-type":"application/json; charset=UTF-8" 
+         }
+      })
+     .then(response=>response.json())
+     .then(json=>{
+       console.log("u here")
+        console.log(json.user)
+        console.log(json)
+     currentuser = json.user;
+     token =json.accesstoken;   
+     console.log(currentuser)
+     localStorage.setItem('id',currentuser.id);
+     localStorage.setItem('email',currentuser.email);
+     localStorage.setItem('role',currentuser.role);
+     localStorage.setItem('token',token)
+    
+     window.location.href="../index.html"
+     })  
+ }
+
+ //like api fetch
+ async function like(articleid){ 
+    //  console.log("you got in here",currentuser.id)
+    let params = articleid
+    let auth = 'Bearer '+localStorage.token
+    console.log(auth)
+        
+    const url = `http://blog-portfolio-apis.herokuapp.com/api/articles-like/${params.toString() }`
+    fetch( url, {
+            method:"POST",
+            body:JSON.stringify({
+            authorId: localStorage.getItem('id'),
+              }),
+                headers:{
+                    'Authorization' : auth,
+                  "content-type":"application/json; charset=UTF-8" 
+            }
+         })
+        .then(response=>response.json())
+        .then(json=>console.log(json))
+    }
+
+//dislike api fetch
+async function dislike(articleid){ 
+    //  console.log("you got in here",currentuser.id)
+    let params = articleid
+    let auth = 'Bearer '+localStorage.token
+        
+    const url = `http://blog-portfolio-apis.herokuapp.com/api/articles-dislike/${params.toString() }`
+    fetch( url, {
+            method:"POST",
+            body:JSON.stringify({
+            authorId: localStorage.getItem('id'),
+              }),
+                headers:{
+                    'Authorization' : auth,
+                  "content-type":"application/json; charset=UTF-8" 
+            }
+         })
+        .then(response=>response.json())
+        .then(json=>console.log(json))
+    } 
+
+//comment api fetch
+async function comment(cmttxt,articleid){ 
+    //  console.log("you got in here",currentuser.id)
+    let params = articleid
+    let auth = 'Bearer '+localStorage.token
+        
+    const url = `http://blog-portfolio-apis.herokuapp.com/api//articles-comment//${params.toString() }`
+    fetch( url, {
+            method:"POST",
+            body:JSON.stringify({
+            authorId: localStorage.getItem('id'),
+            commenttxt:cmttxt,
+
+              }),
+                headers:{
+                    'Authorization' : auth,
+                  "content-type":"application/json; charset=UTF-8" 
+            }
+         })
+        .then(response=>response.json())
+        .then(json=>console.log(json))
+    }
+//logging out
+    const logout = () =>{
+        localStorage.removeItem('token')
+        localStorage.removeItem('id')
+        localStorage.removeItem('role')
+        localStorage.removeItem('email')
+        window.location.href="../index.html"  
+    }
+
+// sending message api fetch
+async function sendmsg(namevalue,uemailvalue,subjectvalue,msgvalue){ 
+    fetch("http://blog-portfolio-apis.herokuapp.com/api/messages", {
+            method:"POST",
+            body:JSON.stringify({
+            uname: namevalue,
+            email:uemailvalue,
+            subject: subjectvalue,
+            message: msgvalue,
+              }),
+                headers:{
+                  "content-type":"application/json; charset=UTF-8" 
+            }
+         })
+        .then(response=>response.json())
+        .then(json=>{
+            console.log(json)
+            alert('your message was sent')
+            location.reload();
+           })
+    }
+    
+async function deletemsg(msgid){ 
+    let params = msgid
+    let auth = 'Bearer '+localStorage.token
+        
+    const url = `http://blog-portfolio-apis.herokuapp.com/api/messages/${params.toString() }`
+    fetch( url, {
+            method:"DELETE",
+                headers:{
+                    'Authorization' : auth,
+                    "content-type":"application/json; charset=UTF-8" 
+            }
+            })
+        // .then(response=>response.json())
+        .then(json=>{
+            alert("message was deleted.")
+            console.log(json)
+        })
+    } 

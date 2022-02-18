@@ -22,7 +22,7 @@ body,html{
 
 .header li{
 display: inline;
-margin-left: 60px;
+margin-left: 40px;
 }
 
 
@@ -362,14 +362,15 @@ width: 300px;
 margin: auto;
 }
 .log-cont input{
-    background-color: rgb(255,242,242);
+    background-color: rgb(193,204,214);
     color: black;
     width: 300px;
     height: 35px;
     margin-top: 25px;
     font-size: 18px;
-    border-radius: 15px;
+
     border: 1px solid rgb(255,242,242);
+    border-bottom: 1px solid black;
     padding-left: 8px;
 }
 .reg-cont input{
@@ -411,6 +412,22 @@ margin-left: 24%;
     margin-top: 40px;
 }
 #send-btn:hover{
+    background-color: yellowgreen;
+    cursor: pointer;
+}
+#del-btn{
+    background-color: rgb(78,83,87);
+    color: black;
+    width: 100px;
+    font-size: 18px;
+    font-weight: 500;
+    height: 35px;
+    border-radius: 20px;
+    border: none;
+    padding: 0;
+    margin-top: 40px;
+}
+#del-btn:hover{
     background-color: yellowgreen;
     cursor: pointer;
 }
@@ -549,14 +566,26 @@ h2{
 .dash-container{
     margin: 0;
     margin-top: -20px;
-    margin-bottom: -20px;
     padding: 0;
     width: 90%;
-    margin: auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
    
     
+}
+#inbox-box{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+#users{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+#admin-user{
+    min-height: 500px;
+}
+.main-msg{
+    min-height: 500px; 
 }
 #blog-p{
     font-size: 23px;
@@ -638,6 +667,10 @@ h2{
         margin-left: 30px;
         margin-right: 30px;
     }
+    .inputs input{
+        width:80%;
+        margin-left:20px;
+    }
 
 }
 
@@ -661,6 +694,22 @@ h2{
     } 
     .part21 img{
         width: 300px;
+    }
+    .dash-container{
+        width: 80%;
+    }
+    #one-art{
+        width:350px;
+    }
+    #commenttxt{
+        width:190px
+    }
+    #rect{
+        margin-left:1px;
+    }
+    .inputs input{
+        width:80%;
+        margin-left:8px;
     }
 
 }
@@ -707,6 +756,12 @@ h2{
         margin-bottom: 20px;
         margin-top: 5px;
     }
+    .inputs input{
+        width:80%;
+        margin-left:0px;
+        
+    }
+   
 }
 @media only screen and (max-width:413px){
     h1{
@@ -725,7 +780,7 @@ h2{
         margin: auto;
     }
     .inputs input{
-        width: 250px;
+        width:80%;
         margin-left: 20px;
     }
     .footer li{
@@ -834,4 +889,28 @@ h2{
     .part12 h3{
         margin-left: 0;
     }
+    .dash-container{
+        grid-template-columns: 1fr;
+    }
+}
+
+#sendcmt{
+    background-color: rgb(78,83,87);
+    color: black;
+    width: 100px;
+    font-size: 18px;
+    font-weight: 500;
+    height: 35px;
+    border-radius: 20px;
+    border: none;
+    padding: 0;
+    margin-top: 10px;
+}
+#sendcmt:hover{
+    background-color: yellowgreen;
+    cursor: pointer;
+}
+#comment{
+    border-radius: 10px;
+    margin-left: 10px;
 }
