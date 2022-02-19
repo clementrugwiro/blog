@@ -1,6 +1,6 @@
  async function register(fnamevalue,lnamevalue,Unamevalue,uemailvalue,upwdvalue){
    console.log("you got in the function")
-fetch("http://blog-portfolio-apis.herokuapp.com/api/add-users", {
+fetch("https://blog-portfolio-apis.herokuapp.com/api/add-users", {
         method:"POST",
         body:JSON.stringify({
         firstname: fnamevalue,

@@ -1,7 +1,7 @@
 async function start(){
 
     let auth = 'Bearer '+localStorage.token
-    const Response = await fetch("http://blog-portfolio-apis.herokuapp.com/api/users",{
+    const Response = await fetch("https://blog-portfolio-apis.herokuapp.com/api/users",{
     headers:{
         'Authorization' : auth,
       "content-type":"application/json; charset=UTF-8" 

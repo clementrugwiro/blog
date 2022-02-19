@@ -384,7 +384,7 @@ const validateform = () =>{
 // register api fetch
 
 async function register(fnamevalue,lnamevalue,Unamevalue,uemailvalue,upwdvalue){ 
- fetch("http://blog-portfolio-apis.herokuapp.com/api/add-users", {
+ fetch("https://blog-portfolio-apis.herokuapp.com/api/add-users", {
          method:"POST",
          body:JSON.stringify({
          firstname: fnamevalue,
@@ -406,7 +406,7 @@ async function register(fnamevalue,lnamevalue,Unamevalue,uemailvalue,upwdvalue){
 
  // login api fetch
  async function login(emailloginvalue,pwdloginvalue){
- fetch("http://blog-portfolio-apis.herokuapp.com/api/login", {
+ fetch("https://blog-portfolio-apis.herokuapp.com/api/login", {
          method:"POST",
          body:JSON.stringify({
          email:emailloginvalue,
@@ -440,7 +440,7 @@ async function register(fnamevalue,lnamevalue,Unamevalue,uemailvalue,upwdvalue){
     let auth = 'Bearer '+localStorage.token
     console.log(auth)
         
-    const url = `http://blog-portfolio-apis.herokuapp.com/api/articles-like/${params.toString() }`
+    const url = `https://blog-portfolio-apis.herokuapp.com/api/articles-like/${params.toString() }`
     fetch( url, {
             method:"POST",
             body:JSON.stringify({
@@ -461,7 +461,7 @@ async function dislike(articleid){
     let params = articleid
     let auth = 'Bearer '+localStorage.token
         
-    const url = `http://blog-portfolio-apis.herokuapp.com/api/articles-dislike/${params.toString() }`
+    const url = `https://blog-portfolio-apis.herokuapp.com/api/articles-dislike/${params.toString() }`
     fetch( url, {
             method:"POST",
             body:JSON.stringify({
@@ -482,7 +482,7 @@ async function comment(cmttxt,articleid){
     let params = articleid
     let auth = 'Bearer '+localStorage.token
         
-    const url = `http://blog-portfolio-apis.herokuapp.com/api//articles-comment//${params.toString() }`
+    const url = `https://blog-portfolio-apis.herokuapp.com/api//articles-comment//${params.toString() }`
     fetch( url, {
             method:"POST",
             body:JSON.stringify({
@@ -533,7 +533,7 @@ async function deletemsg(msgid){
     let params = msgid
     let auth = 'Bearer '+localStorage.token
         
-    const url = `http://blog-portfolio-apis.herokuapp.com/api/messages/${params.toString() }`
+    const url = `https://blog-portfolio-apis.herokuapp.com/api/messages/${params.toString() }`
     fetch( url, {
             method:"DELETE",
                 headers:{

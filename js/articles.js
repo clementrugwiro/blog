@@ -1,5 +1,5 @@
 async function start(){
-    const Response = await fetch("http://blog-portfolio-apis.herokuapp.com/api/aarticles")
+    const Response = await fetch("https://blog-portfolio-apis.herokuapp.com/api/aarticles")
     const data = await Response.json()
     console.log(data)
     displayart(data)
