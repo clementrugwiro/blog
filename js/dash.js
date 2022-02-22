@@ -20,7 +20,7 @@ async function start(){
     const Response = await fetch("https://blog-portfolio-apis.herokuapp.com/api/aarticles")
     const data = await Response.json()
     displaynumart(data.length)
-    displayart(data)
+   
 }
 start();
 
@@ -40,7 +40,7 @@ async function showmsg(){
 })
     const msg = await Response.json()
     displaynummsg(msg.length)
-    displaymsg(msg)
+  
 }
 
 displaynummsg=(nummsg)=>{
