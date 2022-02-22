@@ -586,6 +586,10 @@ h2{
     display: grid;
     padding: 70px;
     grid-template-columns: 1fr 1fr 1fr;
+    width:100%;
+}
+#userdiv{
+    width:100%;
 }
 .dash-div{
     border: 2px solid black;
