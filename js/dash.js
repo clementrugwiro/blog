@@ -17,7 +17,7 @@ displaynumusers=(numusers)=>{
   
 }
 async function start(){
-    const Response = await fetch("http://blog-portfolio-apis.herokuapp.com/api/aarticles")
+    const Response = await fetch("https://blog-portfolio-apis.herokuapp.com/api/aarticles")
     const data = await Response.json()
     displaynumart(data.length)
     displayart(data)
@@ -32,7 +32,7 @@ displaynumart=(numart)=>{
 async function showmsg(){
 
     let auth = 'Bearer '+localStorage.token
-    const Response = await fetch("http://blog-portfolio-apis.herokuapp.com/api/amessages",{
+    const Response = await fetch("https://blog-portfolio-apis.herokuapp.com/api/amessages",{
     headers:{
         'Authorization' : auth,
       "content-type":"application/json; charset=UTF-8" 
