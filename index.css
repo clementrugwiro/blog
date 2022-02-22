@@ -583,6 +583,20 @@ h2{
 }
 #admin-user{
     min-height: 500px;
+    display: grid;
+    padding: 70px;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.dash-div{
+    border: 2px solid black;
+    width: 250px;
+    height: 250px;
+    text-align: center;
+}
+.dash-div:hover{
+    border: 3px solid yellowgreen;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px 1px black;
 }
 .main-msg{
     min-height: 500px; 

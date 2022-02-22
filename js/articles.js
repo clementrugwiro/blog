@@ -1,10 +1,12 @@
 async function start(){
     const Response = await fetch("https://blog-portfolio-apis.herokuapp.com/api/aarticles")
     const data = await Response.json()
-    console.log(data)
     displayart(data)
 }
 start();
+
+
+
 
 displayart=(articles)=>{
 document.getElementById("dash-cont").innerHTML =`
@@ -21,10 +23,10 @@ ${articles.map(function(article){
      <div id="rect"><p id="rect-p"><button onclick="opencmt()"><img src="../images/chat.png" alt=""></button>${article.comment}</p>
      </div><br>
     <div id="inputcontrol">
-     <form  id="fcmt" >
+     <form  action="/" id="fcmt" >
      <div class="error"></div> 
      <textarea name="comment"  id="commenttxt" cols="40" rows="6"></textarea><br>
-     <button type="submit" onclick=(checkForm(value,)) value="${article._id}" id="sendcmt">send</button>
+     <button type="submit"  value="${article._id}" id="sendcmt">send</button>
      </form>
     </div>
     </div>

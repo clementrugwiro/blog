@@ -1,16 +1,15 @@
 async function start(){
-    fetch("https://blog-portfolio-apis.herokuapp.com/api/login", {
-         method:"POST",
-         body:JSON.stringify({
-         email:emailloginvalue,
-         pwd: pwdloginvalue,
-           }),
-             headers:{
-               "content-type":"application/json; charset=UTF-8" 
-         }
-      })
-    .then(response=>response.json())
-    .then(json=>console.log(json))
+
+  let auth = 'Bearer '+localStorage.token
+    const Response = await fetch("https://blog-portfolio-apis.herokuapp.com/api/articles",{
+      headers:{
+          'Authorization' : auth,
+        "content-type":"application/json; charset=UTF-8" 
+      }
+  })
+    const data = await Response.json()
+    console.log(data)
+    displayart(data)
 }
 start();
 
@@ -22,19 +21,13 @@ ${articles.map(function(article){
     <h4> content: ${article.content}</h4><br>
      <div id="cmtsct">
      <div id="rect">
-     <p id="rect-p"><button  id="likebtn" onclick="like(value)" value="${article._id}"><img src="../images/like.png" alt=""></button>${article.likes}</p>
+     <p id="rect-p"><img src="../images/like.png" alt="">${article.likes}</p>
      </div>
-     <div id="rect"><p id="rect-p"><button onclick="dislike(value)" value="${article._id}"><img src="../images/dislike.png" alt=""></button>${article.dislikes}</p>
+     <div id="rect"><p id="rect-p"><img src="../images/dislike.png" alt="">${article.dislikes}</p>
      </div>
-     <div id="rect"><p id="rect-p"><button onclick="opencmt()"><img src="../images/chat.png" alt=""></button>${article.comment}</p>
+     <div id="rect"><p id="rect-p"><img src="../images/chat.png" alt="">${article.comment}</p>
      </div><br>
-    <div id="inputcontrol">
-     <form  id="fcmt" >
-     <div class="error"></div> 
-     <textarea name="comment"  id="commenttxt" cols="40" rows="6"></textarea><br>
-     <button type="submit" onclick=(checkForm(value,)) value="${article._id}" id="sendcmt">send</button>
-     </form>
-    </div>
+     <div><button type="submit" onclick="deleteart(value)" value="${article._id}" id="sendcmt">delete</button><button type="submit" onclick=(checkForm(value,)) value="${article._id}" id="sendcmt">update</button></div>
     </div>
     </div>`
 }).join('')}

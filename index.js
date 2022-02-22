@@ -268,6 +268,18 @@ const checklogg = () =>{
         }
 }
 
+checkrole = () =>{
+    if(localStorage.role ==="admin"){
+        alert("admin page!")
+        window.location.href="./dashboard.html"
+    
+    }
+    else{
+        alert("no admin permission")
+        window.location.href="../index.html"
+    }
+}
+
 
 if(document.querySelector("fcmt")!=null){
     document.querySelector("fcmt").addEventListener('submit', e =>{
@@ -382,7 +394,6 @@ const validateform = () =>{
 
 
 // register api fetch
-
 async function register(fnamevalue,lnamevalue,Unamevalue,uemailvalue,upwdvalue){ 
  fetch("https://blog-portfolio-apis.herokuapp.com/api/add-users", {
          method:"POST",
@@ -403,7 +414,6 @@ async function register(fnamevalue,lnamevalue,Unamevalue,uemailvalue,upwdvalue){
          window.location.href="../login.html"
         })
  }
-
  // login api fetch
  async function login(emailloginvalue,pwdloginvalue){
  fetch("https://blog-portfolio-apis.herokuapp.com/api/login", {
@@ -432,7 +442,6 @@ async function register(fnamevalue,lnamevalue,Unamevalue,uemailvalue,upwdvalue){
      window.location.href="../index.html"
      })  
  }
-
  //like api fetch
  async function like(articleid){ 
     //  console.log("you got in here",currentuser.id)
@@ -454,7 +463,6 @@ async function register(fnamevalue,lnamevalue,Unamevalue,uemailvalue,upwdvalue){
         .then(response=>response.json())
         .then(json=>console.log(json))
     }
-
 //dislike api fetch
 async function dislike(articleid){ 
     //  console.log("you got in here",currentuser.id)
@@ -475,10 +483,9 @@ async function dislike(articleid){
         .then(response=>response.json())
         .then(json=>console.log(json))
     } 
-
 //comment api fetch
 async function comment(cmttxt,articleid){ 
-    //  console.log("you got in here",currentuser.id)
+     console.log("you got in here",currentuser.id)
     let params = articleid
     let auth = 'Bearer '+localStorage.token
         
@@ -506,10 +513,9 @@ async function comment(cmttxt,articleid){
         localStorage.removeItem('email')
         window.location.href="../index.html"  
     }
-
 // sending message api fetch
 async function sendmsg(namevalue,uemailvalue,subjectvalue,msgvalue){ 
-    fetch("http://blog-portfolio-apis.herokuapp.com/api/messages", {
+    fetch("https://blog-portfolio-apis.herokuapp.com/api/messages", {
             method:"POST",
             body:JSON.stringify({
             uname: namevalue,
@@ -528,7 +534,7 @@ async function sendmsg(namevalue,uemailvalue,subjectvalue,msgvalue){
             location.reload();
            })
     }
-    
+// deleting messages
 async function deletemsg(msgid){ 
     let params = msgid
     let auth = 'Bearer '+localStorage.token
@@ -547,3 +553,41 @@ async function deletemsg(msgid){
             console.log(json)
         })
     } 
+//deleting an article
+async function deleteart(artid){ 
+        let params = artid
+        let auth = 'Bearer '+localStorage.token
+            
+        const url = `https://blog-portfolio-apis.herokuapp.com/api/del-articles/${params.toString() }`
+        fetch( url, {
+                method:"DELETE",
+                    headers:{
+                        'Authorization' : auth,
+                        "content-type":"application/json; charset=UTF-8" 
+                }
+                })
+            // .then(response=>response.json())
+            .then(json=>{
+                alert("article was deleted.")
+                console.log(json)
+            })
+    } 
+//deleting a user
+async function deleteuser(artid){ 
+    let params = artid
+    let auth = 'Bearer '+localStorage.token
+        
+    const url = `https://blog-portfolio-apis.herokuapp.com/api/del-users/${params.toString() }`
+    fetch( url, {
+            method:"DELETE",
+                headers:{
+                    'Authorization' : auth,
+                    "content-type":"application/json; charset=UTF-8" 
+            }
+            })
+        // .then(response=>response.json())
+        .then(json=>{
+            alert("user was deleted.")
+            console.log(json)
+        })
+} 

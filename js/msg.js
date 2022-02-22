@@ -8,9 +8,10 @@ async function showmsg(){
     }
 })
     const msg = await Response.json()
-    console.log(msg)
     displaymsg(msg)
 }
+
+
 
 showmsg();
 
